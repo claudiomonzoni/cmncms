@@ -1,0 +1,36 @@
+{
+  "kind": "collectionType",
+  "collectionName": "disenos",
+  "info": {
+    "name": "Diseño"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "Titulo": {
+      "type": "string",
+      "required": true
+    },
+    "Detalles": {
+      "type": "richtext",
+      "required": true
+    },
+    "Fecha": {
+      "type": "date"
+    },
+    "Imagenes": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
+    }
+  }
+}
